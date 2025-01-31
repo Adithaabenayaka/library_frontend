@@ -1,7 +1,7 @@
 import { BrowserRouter as Router,Routes, Route } from 'react-router-dom'
 import MainPage from './pages/MainPage'
 import InventoryHandlerPage from './pages/InventoryHandlerPage'
-import LoginPage from './auth/page/loginPage'
+import Login from './pages/Login'
 import './App.css'
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
     <Router>
       <Routes>
         <Route path='/' element={<MainPage/>} />
-        <Route path='/login' element={<LoginPage /> } />
+        <Route path='/login' element={<Login /> } />
         <Route path='/inventory' element={<InventoryHandlerPage/>} />
       </Routes>
     </Router>
