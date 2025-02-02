@@ -34,8 +34,12 @@ http.interceptors.request.use(
     return response.data;
   };
   
-  export const addBook = async (book: { title: string; author: string }) => {
-    const response = await http.post("/config/books", book);
+  export const addBook = async (book: FormData) => {
+    const response = await http.post("/config/books", book, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    });
     return response.data;
   };
   

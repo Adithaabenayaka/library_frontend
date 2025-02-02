@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import {
   getBooks,
-  addBook,
   updateBook,
   deleteBook,
 } from "../services/HTTPService";
 import { useNavigate } from "react-router-dom";
 import { isAuthenticated, logout } from "../services/AuthService";
+import AddBooks from "./components/AddBooks";
 
 export default function Confi() {
   const navigate = useNavigate();
@@ -113,6 +113,7 @@ export default function Confi() {
             </div>
           </div>
         </div>
+        <AddBooks></AddBooks>
 
         {/* Books Table */}
         <div className="flex items-center justify-center bg-gray-100">
