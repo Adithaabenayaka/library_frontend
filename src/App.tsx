@@ -3,6 +3,7 @@ import MainPage from './pages/MainPage'
 import Login from './auth/page/Login'
 import Config from './pages/Config'
 import './App.css'
+import PrivateRoute from './auth/page/PrivateRoute'
 
 function App() {
 
@@ -12,7 +13,9 @@ function App() {
       <Routes>
         <Route path='/' element={<MainPage/>} />
         <Route path='/login' element={<Login /> } />
-        <Route path='/configurations' element={<Config/>} />
+        <Route element={<PrivateRoute />}>
+          <Route path='/configurations' element={<Config />} />
+        </Route>
       </Routes>
     </Router>
 
