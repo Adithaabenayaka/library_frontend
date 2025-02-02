@@ -40,7 +40,7 @@ export default function Hero() {
   const handleAuthButtonClick = () => {
     if (isAuthenticated()) {
       logout();
-      navigate("/login")
+      navigate("/")
     } else {
       navigate("/login")
     }

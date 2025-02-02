@@ -61,9 +61,9 @@ export default function Confi() {
   const handleAuthButtonClick = () => {
     if (isAuthenticated()) {
       logout();
-      navigate("/login");
+      navigate("/");
     } else {
-      navigate("/login");
+      navigate("/");
     }
   };
 
