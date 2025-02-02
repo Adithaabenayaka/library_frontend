@@ -80,6 +80,11 @@ export default function Confi() {
     }));
   };
 
+  const addingProducts = ()=> {
+    console.log("Adding Products")
+    setKeyword("");
+    loadBooks();
+  }
 
   return (
     <>
@@ -114,7 +119,7 @@ export default function Confi() {
             </div>
           </div>
         </div>
-        <AddBooks></AddBooks>
+        <AddBooks onAddBook={addingProducts} />
 
         {/* Books Table */}
         <div className="flex items-center justify-center bg-gray-100">

@@ -1,7 +1,11 @@
 import { useState } from "react";
 import { addBook } from "../../services/HTTPService";
 
-export default function AddBooks() {
+interface AddBookProps {
+  onAddBook: () => void;
+}
+
+const AddBooks: React.FC<AddBookProps> = ({ onAddBook }) =>{
   const [isOpen, setIsOpen] = useState(false);
   const [formData, setFormData] = useState({
     title: "",
@@ -80,7 +84,7 @@ export default function AddBooks() {
               <input type="file" className="w-full border p-2 rounded mb-4" accept="image/*" onChange={handleFileChange} />
 
               <div className="flex justify-center">
-              <button type="submit" className="btn btn-green px-6 py-2 rounded mt-4">
+              <button type="submit" className="btn btn-green px-6 py-2 rounded mt-4" onClick={onAddBook}>
                 Save
               </button>
               <button type="button" className="btn btn-secondary px-6 py-2 rounded mt-4 ml-2" onClick={toggleDrawer}>
@@ -97,3 +101,5 @@ export default function AddBooks() {
     </div>
   );
 }
+
+export default AddBooks;
