@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getBooks } from "../../services/HTTPService";
 import { useNavigate } from "react-router-dom";
+import { isAuthenticated, logout } from "../../services/AuthService";
 
 export default function Hero() {
   console.log("Rendering Hero Component");
@@ -36,15 +37,29 @@ export default function Hero() {
     setKeyword(value);
   };
 
+  const handleAuthButtonClick = () => {
+    if (isAuthenticated()) {
+      logout();
+      navigate("/login")
+    } else {
+      navigate("/login")
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gray-100">
       {/* Top Right Buttons */}
       <div className="absolute top-4 right-4 flex space-x-4">
-        <button className="btn btn-secondary px-4 py-2 rounded-md shadow-md transition"  onClick={() => navigate("/configurations")}>
+        <button
+          className="btn btn-secondary px-4 py-2 rounded-md shadow-md transition"
+          onClick={() => navigate("/configurations")}
+        >
           Configurations
         </button>
-        <button className="btn btn-primary min-w-[140px]">Log</button>
-         </div>
+        <button className="btn btn-primary min-w-[140px]" onClick={handleAuthButtonClick}>
+          {isAuthenticated() ? "Log Out" : "Log In"}
+        </button>
+      </div>
 
       {/* Hero Section */}
       <div className="bg-[url('/cover-photo.JPG')] bg-cover bg-center text-white text-center py-12">
