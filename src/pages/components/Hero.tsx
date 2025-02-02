@@ -6,6 +6,7 @@ import { isAuthenticated, logout } from "../../services/AuthService";
 export default function Hero() {
   console.log("Rendering Hero Component");
 
+  const API_BASE_URL = import.meta.env.VITE_BE_URL;
   const navigate = useNavigate();
   const [books, setBooks] = useState<
     {
@@ -90,7 +91,7 @@ export default function Hero() {
               className="pb-6 bg-white rounded-lg shadow-md text-center"
             >
               <img
-                src={`http://localhost:3200${book.imageUrl}`}
+                src={`${API_BASE_URL}${book.imageUrl}`}
                 className="w-full h-40 object-cover rounded-md mb-4"
               />
               <h3 className="text-lg font-semibold">{book.title}</h3>
