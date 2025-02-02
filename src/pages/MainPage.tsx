@@ -1,11 +1,11 @@
-import NavBar from "./NavBar";
+import Hero from "./components/Hero";
+import Footer from "./components/Footer";
 
 function MainPage() {
   return (
     <>
-      <div className="text-avocado-600">sdf</div>
-      <NavBar />
-      <div>MainPage</div>
+      <Hero></Hero>
+      <Footer></Footer>
 
     </>
   );

@@ -27,5 +27,25 @@ http.interceptors.request.use(
       return Promise.reject(error);
     }
   );
+
+  export const getBooks = async () => {
+    const response = await http.get("/config/books");
+    return response.data;
+  };
+  
+  export const addBook = async (book: { title: string; author: string }) => {
+    const response = await http.post("/config/books", book);
+    return response.data;
+  };
+  
+  export const updateBook = async (id: string, book: { title: string; author: string }) => {
+    const response = await http.put(`/config/books/${id}`, book);
+    return response.data;
+  };
+  
+  export const deleteBook = async (id: string) => {
+    await http.delete(`/config/books/${id}`);
+  };
+
   
   export default http;
