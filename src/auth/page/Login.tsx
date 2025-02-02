@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { login, register } from "../services/AuthService";
+import { login, register } from "../../services/AuthService";
 import COVER_PHOTO from "../../public/image/book-login-page-cover.jpg";
 
 export default function Login() {

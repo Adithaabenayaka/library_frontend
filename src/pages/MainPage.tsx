@@ -6,7 +6,6 @@ function MainPage() {
     <>
       <Hero></Hero>
       <Footer></Footer>
-
     </>
   );
 }
