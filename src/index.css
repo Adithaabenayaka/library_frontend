@@ -3,18 +3,35 @@
 @layer components {
   .btn {
     @apply relative inline-flex items-center justify-center px-4 py-2 rounded-lg 
-              font-medium transition overflow-hidden shadow-md text-white;
+              font-normal transition overflow-hidden shadow-md text-white;
   }
 
   .btn-primary {
-    @apply bg-gradient-to-br from-[#be8a05] to-[#755000]
-             hover:from-[#755000] hover:to-[#be8a05] text-white;
+    @apply bg-gradient-to-br from-[#ac7b01] to-[#755000] font-medium
+             hover:from-[#755000] hover:to-[#ac7b01] text-white;
   }
 
   .btn-secondary {
-    @apply bg-gradient-to-br from-[#a5a4a3] to-[#5a5a5a]
-             hover:from-[#5a5a5a] hover:to-[#a5a4a3] text-white;
+    @apply bg-gradient-to-br from-[#adadad] to-[#464545] font-medium
+             hover:from-[#464545] hover:to-[#adadad] text-white;
   }
+
+  .btn-green {
+    @apply bg-gradient-to-br from-[#02b82f] to-[#006b0f] font-medium
+             hover:from-[#006b0f] hover:to-[#02b82f] text-white;
+  }
+
+  .btn-red {
+    @apply bg-gradient-to-br from-[#915959] to-[#a72e2e]
+             hover:from-[#6b0000] hover:to-[#b80202] text-white;
+  }
+
+
+  .btn-yellow {
+    @apply bg-gradient-to-br from-[#578663] to-[#3ba349]
+             hover:from-[#006b0f] hover:to-[#02b82f] text-white;
+  }
+
 
 }
 

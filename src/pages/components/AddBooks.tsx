@@ -53,9 +53,9 @@ export default function AddBooks() {
   };
 
   return (
-    <div>
-      <button className="bg-blue-500 text-white px-6 py-2 rounded m-2" onClick={toggleDrawer}>
-        Add Book
+    <div className="bg-white">
+      <button className="btn btn-primary px-6 py-2 mt-2  ml-10" onClick={toggleDrawer}>
+        Add Books
       </button>
 
       {isOpen && (
@@ -79,12 +79,17 @@ export default function AddBooks() {
               <label className="block mb-1">Upload Image</label>
               <input type="file" className="w-full border p-2 rounded mb-4" accept="image/*" onChange={handleFileChange} />
 
-              <button type="submit" className="bg-blue-500 text-white px-6 py-2 rounded mt-4">
+              <div className="flex justify-center">
+              <button type="submit" className="btn btn-green px-6 py-2 rounded mt-4">
                 Save
               </button>
-              <button type="button" className="bg-gray-500 text-white px-6 py-2 rounded mt-4 ml-2" onClick={toggleDrawer}>
+              <button type="button" className="btn btn-secondary px-6 py-2 rounded mt-4 ml-2" onClick={toggleDrawer}>
                 Cancel
               </button>
+              </div>
+
+
+              
             </form>
           </div>
         </div>

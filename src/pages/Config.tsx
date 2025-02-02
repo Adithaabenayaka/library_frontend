@@ -7,6 +7,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import { isAuthenticated, logout } from "../services/AuthService";
 import AddBooks from "./components/AddBooks";
+import Footer from "./components/Footer";
 
 export default function Confi() {
   const navigate = useNavigate();
@@ -117,7 +118,7 @@ export default function Confi() {
 
         {/* Books Table */}
         <div className="flex items-center justify-center bg-gray-100">
-          <div className="w-full p-6 bg-white rounded-lg shadow-md">
+          <div className="w-full pl-6 pr-6 pt-2 pb-6 bg-white rounded-lg shadow-md">
             {/* Books Table */}
             <table className="w-full table-auto">
               <thead>
@@ -221,13 +222,13 @@ export default function Confi() {
                       {editingBookId === book._id ? (
                         <>
                           <button
-                            className="bg-green-500 text-white px-4 py-1 rounded m-2 min-w-[80px]"
+                            className="btn btn-green px-4 py-1 rounded m-2 min-w-[80px] font-normal"
                             onClick={handleSaveEdit}
                           >
                             Save
                           </button>
                           <button
-                            className="bg-gray-500 text-white px-4 py-1 rounded m-2 min-w-[80px]"
+                            className="btn btn-secondary px-4 py-1 rounded m-2 min-w-[80px] font-normal"
                             onClick={() => setEditingBookId(null)}
                           >
                             Cancel
@@ -236,14 +237,14 @@ export default function Confi() {
                       ) : (
                         <>
                           <button
-                            className="bg-yellow-500 text-white px-4 py-1 rounded m-2 min-w-[80px]"
+                            className="btn btn-yellow text-white px-4 py-1 rounded m-2 min-w-[80px]"
                             onClick={() => handleEditClick(book)}
                           >
                             Edit
                           </button>
 
                           <button
-                            className="bg-red-500 text-white px-4 py-1 rounded m-2"
+                            className="btn btn-red px-4 py-1 rounded m-2"
                             onClick={() => handleDelete(book._id)}
                           >
                             Delete
@@ -258,6 +259,7 @@ export default function Confi() {
           </div>
         </div>
       </div>
+      <Footer></Footer>
     </>
   );
 }
