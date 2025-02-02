@@ -23,3 +23,12 @@ export const getToken = () => {
 export const isAuthenticated = () => {
   return !!getToken();
 };
+
+export const register = async (username: string, email: string, password: string) => {
+  try {
+    const response = await http.post("/auth/register", { username, email, password });
+    return response.data;
+  } catch (error: any) {
+    throw new Error(error.response?.data?.message || "Registration failed");
+  }
+};
