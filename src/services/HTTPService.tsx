@@ -28,8 +28,9 @@ http.interceptors.request.use(
     }
   );
 
-  export const getBooks = async () => {
-    const response = await http.get("/config/books");
+  export const getBooks = async (keyword?: string) => {
+    const url = keyword ? `/config/books?keyword=${keyword}` : '/config/books';
+    const response = await http.get(url);
     return response.data;
   };
   
