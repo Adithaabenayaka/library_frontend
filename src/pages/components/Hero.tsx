@@ -37,23 +37,20 @@ export default function Hero() {
   return (
     <div className="min-h-screen bg-gray-100">
       {/* Hero Section */}
-      <div className="bg-blue-600 text-white text-center py-12">
-        <h1 className="text-3xl font-bold">Welcome to Our Library</h1>
-        <p className="text-lg mt-2">
+      <div className="bg-[url('/cover-photo.JPG')] bg-cover bg-center text-white text-center py-12">
+        <h1 className="text-3xl font-bold drop-shadow-lg">Welcome to Our Library</h1>
+        <p className="text-lg mt-2 font-semibold drop-shadow-lg">
           Explore thousands of books and resources.
         </p>
         <div className="mt-6 flex justify-center">
           <div className="relative w-full max-w-md">
             <input
               type="text"
-              placeholder="Search for books..."
-              className="w-full pl-10 pr-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
+              placeholder="Search for books / authors / genre / publishers..."
+              className="w-full pl-10 pr-4 py-2 rounded-md border border-white focus:outline-none focus:ring-2 focus:ring-blue-400 placeholder-white drop-shadow-lg"
               onChange={handleSearchChange}
             />
           </div>
-          <button className="ml-2 px-4 py-2 bg-white text-blue-600 font-semibold rounded-md shadow hover:bg-gray-100">
-            Search
-          </button>
         </div>
       </div>
 

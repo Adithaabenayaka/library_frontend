@@ -1,28 +1,10 @@
 @import "tailwindcss";
 
 @layer components {
-    .primary-btn {
-        @apply bg-transparent bg-avocado-600  hover:text-white font-semibold py-1 px-4 hover:border-transparent rounded hover:!scale-110 duration-200
-}
 
 }
 
 @theme {
-    --font-display: "Satoshi", "sans-serif";
-    --breakpoint-3xl: 1920px;
-    --color-avocado-100: oklch(0.99 0 0);
-    --color-avocado-200: oklch(0.98 0.04 113.22);
-    --color-avocado-300: oklch(0.94 0.11 115.03);
-    --color-avocado-400: oklch(0.92 0.19 114.08);
-    --color-avocado-500: oklch(0.84 0.18 117.33);
-    --color-avocado-600: oklch(0.53 0.12 118.34);
-    --ease-fluid: cubic-bezier(0.3, 0, 0, 1);
-    --ease-snappy: cubic-bezier(0.2, 0, 0, 1);
-    /* ... */
+    
+    --drop-shadow-lg: 5px 5px 5px rgba(0, 0, 0, .9); 
   }
-
-@layer utilities {
-    .drop-shadow {
-        filter: drop-shadow(-6px 8px 15px rgba(0, 0, 0, 0.2)); 
-    }
-}

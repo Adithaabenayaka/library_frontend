@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { login } from "../services/AuthService";
-import COVER_PHOTO from "../assets/images/book-login-page-cover.jpg";
+import COVER_PHOTO from "../../public/image/book-login-page-cover.jpg";
 
 export default function Login() {
   console.log("Rendering Login Page");
