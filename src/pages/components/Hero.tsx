@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { getBooks } from "../../services/HTTPService";
+import { useNavigate } from "react-router-dom";
 
 export default function Hero() {
   console.log("Rendering Hero Component");
 
+  const navigate = useNavigate();
   const [books, setBooks] = useState<
     {
       _id: string;
@@ -20,7 +22,7 @@ export default function Hero() {
 
   const [keyword, setKeyword] = useState("");
 
-  useEffect(() => { 
+  useEffect(() => {
     loadBooks(keyword);
   }, [keyword]);
 
@@ -31,14 +33,24 @@ export default function Hero() {
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
-    setKeyword(value)
+    setKeyword(value);
   };
 
   return (
     <div className="min-h-screen bg-gray-100">
+      {/* Top Right Buttons */}
+      <div className="absolute top-4 right-4 flex space-x-4">
+        <button className="btn btn-secondary px-4 py-2 rounded-md shadow-md transition"  onClick={() => navigate("/configurations")}>
+          Configurations
+        </button>
+        <button className="btn btn-primary min-w-[140px]">Log</button>
+         </div>
+
       {/* Hero Section */}
       <div className="bg-[url('/cover-photo.JPG')] bg-cover bg-center text-white text-center py-12">
-        <h1 className="text-3xl font-bold drop-shadow-lg">Welcome to Our Library</h1>
+        <h1 className="text-3xl font-bold drop-shadow-lg">
+          Welcome to Our Library
+        </h1>
         <p className="text-lg mt-2 font-semibold drop-shadow-lg">
           Explore thousands of books and resources.
         </p>
@@ -72,7 +84,7 @@ export default function Hero() {
               <p className="text-blue-600 font-bold mt-2">
                 {book.currency} {book.price}
               </p>
-              <button className="mt-4 px-4 py-2 bg-blue-600 text-white font-semibold rounded-md shadow hover:bg-blue-700">
+              <button className="mt-4 px-4 py-2 btn btn-primary ">
                 Buy Now
               </button>
             </div>
