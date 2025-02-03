@@ -8,6 +8,7 @@ This is the frontend of the application, built with React and TypeScript. It int
 - Tailwind CSS for styling
 - API integration with a Node.js backend
 - Responsive UI
+- Docker Support
 
 ## 📦 Installation
 
