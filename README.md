@@ -18,17 +18,23 @@ Ensure you have the following installed:
 - [Node.js](https://nodejs.org/) (LTS recommended) - 22.13.0 Version
 - [npm](https://www.npmjs.com/)
 
-### Clone the Repository
+### 01. Clone the Repository
 
 
 git clone https://github.com/Adithaabenayaka/library_frontend
 cd library_frontend
 
-### Environment Variables
+### 02. Environment Variables
 Create a .env file in the project root and variable according to .env_sample
+
+### 03. Install and Run (Without Docker - If you use docker go to step 04)
 
 npm install
 npm run dev 
+
+### Docker for build
+docker build -t library-frontend .  
+docker run -d -p <Port for FE>:80 --name library-frontend-container library-frontend
 
 ### Enjoy!!!
 ###
