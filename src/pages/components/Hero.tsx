@@ -29,8 +29,14 @@ export default function Hero() {
   }, [keyword]);
 
   const loadBooks = async (keyword?: string) => {
-    const data = await getBooks(keyword);
-    setBooks(data.data);
+    try {
+      const data = await getBooks(keyword);
+      setBooks(data.data);
+    } catch (error) {
+      console.error("Error fetching books:", error);
+      setBooks([]);
+    }
+
   };
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -85,26 +91,37 @@ export default function Hero() {
       {/* Featured Books */}
       <div className="container mx-auto py-12 px-4">
         <div className="grid sm:grid-cols-1 md:grid-cols-6 gap-6">
-          {books.map((book) => (
-            <div
-              key={book._id}
-              className="pb-6 bg-white rounded-lg shadow-md text-center"
-            >
-              <img
-                src={`${API_BASE_URL}${book.imageUrl}`}
-                className="w-full h-40 object-cover rounded-md mb-4"
-              />
-              <h3 className="text-lg font-semibold">{book.title}</h3>
-              <p className="text-gray-500 text-sm">{book.author}</p>
+          {books === undefined || books.length === 0 ? (
+            <p className="text-center text-gray-500 col-span-6">
+            No books found. Try a different search term.
+            </p>
+          ): (
+            books.map((book) => (
+              <div
+                key={book._id}
+                className="pb-6 bg-white rounded-lg shadow-md text-center"
+              >
+                <img
+                  src={`${API_BASE_URL}${book.imageUrl}`}
+                  className="w-full h-40 object-cover rounded-md mb-4"
+                />
+                <h3 className="text-lg font-semibold">{book.title}</h3>
+                <p className="text-gray-500 text-sm">{book.author}</p>
+  
+                <p className="text-blue-600 font-bold mt-2">
+                  {book.currency} {book.price}
+                </p>
+                <button className="mt-4 px-4 py-2 btn btn-primary ">
+                  Buy Now
+                </button>
+              </div>
+            ))
+          )}
 
-              <p className="text-blue-600 font-bold mt-2">
-                {book.currency} {book.price}
-              </p>
-              <button className="mt-4 px-4 py-2 btn btn-primary ">
-                Buy Now
-              </button>
-            </div>
-          ))}
+
+
+          
+
         </div>
       </div>
     </div>
